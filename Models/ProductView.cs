@@ -5,15 +5,6 @@ using System.ComponentModel.DataAnnotations;
 
 public class ProductView
 {
-    public enum Unit
-    {
-        kg,
-        lb,
-        litre,
-        gallon,
-        oz
-    }
-
     [Key]
     public int Id { get; set; }
 
@@ -21,7 +12,7 @@ public class ProductView
     [StringLength(
         150,
         MinimumLength = 2,
-        ErrorMessage = "Product Name should have 2-150 charachters"
+        ErrorMessage = "Product Description should have 2-150 charachters"
     )]
     [DisplayName("Product Description")]
     public string Description { get; set; }
@@ -53,8 +44,8 @@ public class ProductView
     public string ProductCode { get; set; }
 
     [Required]
-    [EnumDataType(typeof(Unit), ErrorMessage = "Not a valid unit")]
-    public Unit unit { get; set; }
+    [EnumDataType(typeof(Product.Unit), ErrorMessage = "Not a valid unit")]
+    public Product.Unit SalesUnit { get; set; }
 
     [Required(ErrorMessage = "Manufacturing date is required")]
     [DataType(DataType.Date)]

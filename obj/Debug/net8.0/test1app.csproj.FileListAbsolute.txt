@@ -275,3 +275,4 @@ D:\Conestoga Study Materials\Web\Last Sem\Feba_Thampan_Final_Project\T1\test1app
 D:\Conestoga Study Materials\Web\Last Sem\Feba_Thampan_Final_Project\T1\test1app\obj\Debug\net8.0\test1app.pdb
 D:\Conestoga Study Materials\Web\Last Sem\Feba_Thampan_Final_Project\T1\test1app\obj\Debug\net8.0\test1app.genruntimeconfig.cache
 D:\Conestoga Study Materials\Web\Last Sem\Feba_Thampan_Final_Project\T1\test1app\obj\Debug\net8.0\ref\test1app.dll
+D:\Conestoga Study Materials\Web\Last Sem\Feba_Thampan_Final_Project\T1\test1app\obj\Debug\net8.0\test1app.sourcelink.json
