@@ -67,7 +67,7 @@
     </dl>
 </div>
 <div>
-    <form asp-controller="Carts" asp-action="AddToCart" asp-route-id="@Model.Id" method="post">
+    <form asp-controller="Carts" asp-action="Index">
         <button type="submit">Add to Cart</button>
     </form>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
