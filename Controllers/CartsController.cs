@@ -22,8 +22,27 @@ namespace test1app.Controllers
         // GET: Carts
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Cart.Include(c => c.Product).Include(c => c.User);
-            return View(await applicationDbContext.ToListAsync());
+            // Get UserId from session
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            // Check if UserId is null
+            if (userId == null)
+            {
+                // Handle scenario where UserId is not found in session, maybe redirect to login page
+                return RedirectToAction("Login", "Users");
+            }
+            //var carts = _context.Cart.Include(c => c.Product).Include(c => c.User).ToList();
+            // Retrieve carts for the logged-in user only
+            var carts = _context
+                .Cart.Where(c => c.UserId == userId)
+                .Include(c => c.Product)
+                .Include(c => c.User)
+                .ToList();
+            // Calculate total amount
+            decimal totalAmount = carts.Sum(c => c.Quantity * c.Product.PricePerUnit);
+
+            ViewData["TotalAmount"] = totalAmount;
+            return View(carts);
         }
 
         // GET: Carts/Details/5
