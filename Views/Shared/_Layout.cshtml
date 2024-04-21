@@ -37,11 +37,16 @@
                                 asp-action="Index">Users</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">
-                                Logout</a>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Carts" asp-action="Index">
                                 Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <form id="logoutForm" asp-controller="Users" asp-action="Logout" method="post"
+                                class="d-inline">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-link navbar-btn">Logout</button>
+                            </form>
+
                         </li>
                     </ul>
                 </div>

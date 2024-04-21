@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using test1app.Data;
 
@@ -14,6 +15,7 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Make the session cookie essential to the application's operation
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
 });
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

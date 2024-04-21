@@ -91,12 +91,13 @@ namespace test1app.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            // Clear session
+            // Clear session data
             HttpContext.Session.Clear();
 
-            return RedirectToAction("Login", "Users");
+            // Redirect to home page or login page
+            return RedirectToAction(nameof(Login));
         }
 
         // POST: Users/Create

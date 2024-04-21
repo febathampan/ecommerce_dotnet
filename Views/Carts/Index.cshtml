@@ -10,7 +10,9 @@
     <a asp-action="Create">Create New</a>
 </p>
 <p>Total Amount: @ViewData["TotalAmount"]</p>
-
+<form asp-action="Checkout" method="post">
+    <button type="submit" class="btn btn-primary">Checkout</button>
+</form>
 <table class="table">
     <thead>
         <tr>

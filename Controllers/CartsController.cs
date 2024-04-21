@@ -209,5 +209,38 @@ namespace test1app.Controllers
         {
             return _context.Cart.Any(e => e.Id == id);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Checkout()
+        {
+            // Get UserId from session
+            var userId = HttpContext.Session.GetInt32("UserId");
+
+            // Check if UserId is null
+            if (userId == null)
+            {
+                // Handle scenario where UserId is not found in session, maybe redirect to login page
+                return RedirectToAction("Login", "Users");
+            }
+
+            try
+            {
+                // Retrieve carts for the logged-in user
+                var userCarts = _context.Cart.Where(c => c.UserId == userId).ToList();
+
+                // Remove carts for the logged-in user
+                _context.Cart.RemoveRange(userCarts);
+                await _context.SaveChangesAsync();
+
+                // Redirect to Index action to display an empty cart after checkout
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                // Handle exception, log error, display error message, etc.
+                return RedirectToAction("Error", "Home");
+            }
+        }
     }
 }
