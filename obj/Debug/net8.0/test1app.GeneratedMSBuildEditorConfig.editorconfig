@@ -26,6 +26,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Conestoga Study Materials\Web\Last Sem\Feba_Thampan_Final_Project\T1\test1app
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Conestoga Study Materials/Web/Last Sem/Feba_Thampan_Final_Project/T1/test1app/Views/Carts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Conestoga Study Materials/Web/Last Sem/Feba_Thampan_Final_Project/T1/test1app/Views/Carts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Conestoga Study Materials/Web/Last Sem/Feba_Thampan_Final_Project/T1/test1app/Views/Carts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Conestoga Study Materials/Web/Last Sem/Feba_Thampan_Final_Project/T1/test1app/Views/Carts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Conestoga Study Materials/Web/Last Sem/Feba_Thampan_Final_Project/T1/test1app/Views/Carts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Conestoga Study Materials/Web/Last Sem/Feba_Thampan_Final_Project/T1/test1app/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
