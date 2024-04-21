@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -75,6 +76,9 @@ namespace test1app.Controllers
                 if (user != null)
                 {
                     Console.WriteLine("Feba");
+                    // Set user ID in session
+                    HttpContext.Session.SetInt32("UserId", user.Id);
+                    Console.WriteLine(HttpContext.Session.GetInt32("UserId"));
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -82,6 +86,16 @@ namespace test1app.Controllers
                     return RedirectToAction("Login", "Users");
                 }
             }
+            return RedirectToAction("Login", "Users");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Logout()
+        {
+            // Clear session
+            HttpContext.Session.Clear();
+
             return RedirectToAction("Login", "Users");
         }
 

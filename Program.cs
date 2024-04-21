@@ -8,6 +8,13 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite("Data Source=MyDb.db")
 );
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true; // Ensure the session cookie is not accessible via JavaScript
+    options.Cookie.IsEssential = true; // Make the session cookie essential to the application's operation
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,6 +31,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+// Enable session middleware
+app.UseSession();
 
 app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
